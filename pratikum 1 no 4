@@ -1,0 +1,42 @@
+// C++ code
+//
+int led1 = 9; //deklarasi variabel led
+int led2 = 10;
+int led3 = 11;
+int i = 1;
+void setup()
+{
+  pinMode(led1, OUTPUT); // menentukan bahwa Pin variabel yang dituju adalah output
+  pinMode(led2, OUTPUT);
+  pinMode(led3, OUTPUT);
+}
+
+void loop()
+{
+ for(i = 0; i <=255; i+=25){
+  analogWrite(led1, i);
+  delay(50);
+  }
+  for(i = 0; i <=255; i+=25){
+  analogWrite(led2, i);
+  delay(100);
+  }
+  for(i = 0; i <=255; i+=25){
+  analogWrite(led3, i);
+  delay(150);
+  }
+ 
+   for(i = 255; i >=0; i-=25){
+  analogWrite(led1, i);
+  delay(50);
+  }
+  for(i = 255; i >=0; i-=25){
+  analogWrite(led2, i);
+  delay(100);
+  }
+  for(i = 255; i >=0; i-=25){
+  analogWrite(led3, i);
+  delay(150);
+  }
+  
+}
