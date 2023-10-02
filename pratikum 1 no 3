@@ -14,18 +14,18 @@ void setup()
 void loop()
 {
  // Meningkatkan kecerahan
-  for (int i = 0; i <= 255; i += fadeAmount) {
-    analogWrite(ledPin1, i); // Mengatur kecerahan LED
-    analogWrite(ledPin2, i);
-    analogWrite(ledPin3, i);
+  for (int i = 0; i <= 255; i += 25) {
+    analogWrite(led1, i); // Mengatur kecerahan LED
+    analogWrite(led2, i);
+    analogWrite(led3, i);
     delay(30); // Menunggu sebentar sebelum meningkatkan lagi
   }
 
   // Mengurangi kecerahan
-  for (int i = 255; i >= 0; i -= fadeAmount) {
-    analogWrite(ledPin1, i); // Mengatur kecerahan LED
-    analogWrite(ledPin2, i);
-    analogWrite(ledPin3, i);
+  for (int i = 255; i >= 0; i -= 25) {
+    analogWrite(led1, i); // Mengatur kecerahan LED
+    analogWrite(led2, i);
+    analogWrite(led3, i);
     delay(30); // Menunggu sebentar sebelum mengurangi lagi
   }
   
