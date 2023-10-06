@@ -1,0 +1,39 @@
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27,16,2);
+const int button1=7;
+const int button2=6;
+const int button3=5;
+
+// Mengatur Alamat LCD I2C ke 0x27 dan agar LCD dapat
+// digunakan sebanyak 16 karakter dan 2 line display
+void setup()
+{ 
+  lcd.init();
+  lcd.begin(16,2);
+  pinMode(button1,INPUT);
+  pinMode(button2,INPUT);
+  pinMode(button3,INPUT); 
+  lcd.backlight(); // Backlight on
+  
+  
+}
+void loop()
+{
+  if(digitalRead(button1)==LOW){ 
+    lcd.clear();
+    lcd.print("Hello world!");
+    lcd.setCursor(2,0);
+  }
+  if(digitalRead(button2)==LOW){
+     lcd.clear();
+     lcd.print("Prodi D3 TK");
+     lcd.setCursor(2,1);
+  }
+  if(digitalRead(button3)==LOW){
+    lcd.clear();
+  }
+
+//Set cursor ke kolom karakter 2 pada baris 0
+//Menampilkan pesan ”Hello World” pada kedua baris LCD
+//Memindahkan cursor ke kolom 2 pada baris 1
+}
