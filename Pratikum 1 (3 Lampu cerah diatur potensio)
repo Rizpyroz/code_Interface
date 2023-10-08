@@ -1,3 +1,7 @@
+//Buatlah program untuk fading menyala dan mati secara
+bergantian dengan durasi pengaturan milidetik menyala dan
+mati menggunakan potensiometer
+
 int led1=9;
 int led2=10;
 int led3=11;
