@@ -1,3 +1,6 @@
+//Buatlah program untuk tiga LED dapat fadding menayala
+dan mati secara bergantian dengan durasi pegaturan
+milidetik menyala dan mati ketika push buton ditekan
 
 int led1=9;
 int led2=10;
