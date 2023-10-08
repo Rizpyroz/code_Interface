@@ -1,1 +1,66 @@
+//Buatlah program aplikasi dengan menggunakan 3 LED, 1
+Potensiometer, 1 Push Button yang terdapat kendali On/Off,
+PWM, dan Delay. Running LED dengan durasi fading yang
+diatur menggunakan potensiometer. Tombol on/off berlaku
+untuk memulai dan mengakhiri proses running LED.
 
+int led1=9;
+int led2=10;
+int led3=11;
+
+int brightness = 0;
+int fadeAmount = 5;
+int fadeDelay = 20;
+
+int tombol=2; 
+int pot=A0; 
+int data; 
+int i=1;
+
+void setup(){ 
+pinMode(led1,OUTPUT); 
+  pinMode(led2,OUTPUT); 
+  pinMode(led3,OUTPUT); 
+pinMode(pot,INPUT);
+pinMode(tombol,INPUT); 
+}
+
+void loop(){ 
+ if(digitalRead(tombol)==LOW){ 
+  i++;
+ }
+  //on off
+ data=analogRead(pot); 
+data=data/4; 
+analogWrite(led1,data); 
+  analogWrite(led2,data); 
+  analogWrite(led3,data);
+  //on off
+
+if (i==2){
+
+digitalWrite(led1,HIGH); 
+   digitalWrite(led2,HIGH);
+   digitalWrite(led3,HIGH);
+  
+  data=analogRead(pot); 
+data=data/4; 
+
+   
+analogWrite(led1,HIGH);
+  delay(data);
+  analogWrite(led2,HIGH); 
+  delay(data);
+  analogWrite(led3,HIGH); 
+  delay(data);
+
+analogWrite(led1,LOW);
+  delay(data);
+  analogWrite(led2,LOW); 
+  delay(data);
+  analogWrite(led3,LOW); 
+  delay(data); 
+
+}
+
+}
